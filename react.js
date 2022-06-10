@@ -33,7 +33,7 @@ module.exports = {
 	],
 	settings: {
 		react: {
-			version: "latest",
+			version: "18",
 		},
 		"import/parsers": {
 			"@typescript-eslint/parser": [".ts", ".tsx"],
@@ -56,6 +56,7 @@ module.exports = {
 			{ terms: ["fixme"], location: "anywhere" },
 		],
 		"react/prop-types": "off",
+		"react/react-in-jsx-scope": "off",
 		"react-hooks/rules-of-hooks": "error",
 		"react-hooks/exhaustive-deps": "error",
 	},
