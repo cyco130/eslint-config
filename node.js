@@ -20,9 +20,6 @@ module.exports = {
 	},
 	plugins: ["@typescript-eslint", "import", "no-only-tests", "only-warn"],
 	settings: {
-		react: {
-			version: "latest",
-		},
 		"import/parsers": {
 			"@typescript-eslint/parser": [".ts", ".tsx"],
 		},
@@ -30,6 +27,7 @@ module.exports = {
 			typescript: {
 				alwaysTryTypes: true,
 			},
+			exports: {},
 		},
 	},
 	rules: {
