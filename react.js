@@ -38,7 +38,12 @@ module.exports = {
 		"import/parsers": {
 			"@typescript-eslint/parser": [".ts", ".tsx"],
 		},
-		exports: {},
+		"import/resolver": {
+			typescript: {
+				alwaysTryTypes: true,
+			},
+			exports: {},
+		},
 	},
 	rules: {
 		"@typescript-eslint/no-explicit-any": "off",
