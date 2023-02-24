@@ -43,7 +43,6 @@ module.exports = {
 		"@typescript-eslint/no-explicit-any": "off",
 		"@typescript-eslint/no-non-null-assertion": "off",
 		"@typescript-eslint/explicit-module-boundary-types": "off",
-		"no-restricted-imports": ["error", ...buildinModules],
 
 		"import/no-nodejs-modules": [
 			"error",
