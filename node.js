@@ -1,3 +1,5 @@
+const { builtinModules } = require("node:module");
+
 module.exports = {
 	env: {
 		node: true,
@@ -31,15 +33,21 @@ module.exports = {
 		},
 	},
 	rules: {
-		"@typescript-eslint/no-explicit-any": "off",
-		"@typescript-eslint/no-non-null-assertion": "off",
-		"@typescript-eslint/explicit-module-boundary-types": "off",
-		"no-console": ["error", { allow: ["warn", "error"] }],
 		"no-only-tests/no-only-tests": "error",
 		"no-mixed-spaces-and-tabs": "off",
 		"no-warning-comments": [
 			"error",
 			{ terms: ["fixme"], location: "anywhere" },
+		],
+
+		"@typescript-eslint/no-explicit-any": "off",
+		"@typescript-eslint/no-non-null-assertion": "off",
+		"@typescript-eslint/explicit-module-boundary-types": "off",
+		"no-restricted-imports": ["error", ...buildinModules],
+
+		"import/no-nodejs-modules": [
+			"error",
+			{ allow: builtinModules.map((mod) => `node:${mod}`) },
 		],
 	},
 };
