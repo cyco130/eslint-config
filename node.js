@@ -33,6 +33,7 @@ module.exports = {
 		},
 	},
 	rules: {
+		"no-console": ["error", { allow: ["warn", "error"] }],
 		"no-only-tests/no-only-tests": "error",
 		"no-mixed-spaces-and-tabs": "off",
 		"no-warning-comments": [
