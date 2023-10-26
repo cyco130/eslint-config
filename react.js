@@ -13,6 +13,7 @@ module.exports = {
 		"plugin:react/recommended",
 		"plugin:ssr-friendly/recommended",
 		"plugin:css-modules/recommended",
+		"plugin:deprecation/recommended",
 		"prettier",
 	],
 	parser: "@typescript-eslint/parser",
@@ -59,7 +60,9 @@ module.exports = {
 		"@typescript-eslint/no-explicit-any": "off",
 		"@typescript-eslint/no-non-null-assertion": "off",
 		"@typescript-eslint/explicit-module-boundary-types": "off",
+		"@typescript-eslint/no-floating-promises": "error",
 
+		"import/no-unresolved": "off",
 		"import/no-nodejs-modules": [
 			"error",
 			{ allow: builtinModules.map((mod) => `node:${mod}`) },
@@ -69,5 +72,7 @@ module.exports = {
 		"react/react-in-jsx-scope": "off",
 		"react-hooks/rules-of-hooks": "error",
 		"react-hooks/exhaustive-deps": "error",
+
+		"deprecation/deprecation": "error",
 	},
 };

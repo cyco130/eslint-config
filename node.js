@@ -10,6 +10,7 @@ module.exports = {
 		"plugin:@typescript-eslint/recommended",
 		"plugin:import/recommended",
 		"plugin:import/typescript",
+		"plugin:deprecation/recommended",
 		"prettier",
 	],
 	parser: "@typescript-eslint/parser",
@@ -44,10 +45,14 @@ module.exports = {
 		"@typescript-eslint/no-explicit-any": "off",
 		"@typescript-eslint/no-non-null-assertion": "off",
 		"@typescript-eslint/explicit-module-boundary-types": "off",
+		"@typescript-eslint/no-floating-promises": "error",
 
+		"import/no-unresolved": "off",
 		"import/no-nodejs-modules": [
 			"error",
 			{ allow: builtinModules.map((mod) => `node:${mod}`) },
 		],
+
+		"deprecation/deprecation": "error",
 	},
 };
