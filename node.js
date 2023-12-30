@@ -30,7 +30,6 @@ module.exports = {
 			typescript: {
 				alwaysTryTypes: true,
 			},
-			exports: {},
 		},
 	},
 	rules: {
