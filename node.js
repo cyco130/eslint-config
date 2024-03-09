@@ -41,12 +41,22 @@ module.exports = {
 			{ terms: ["fixme"], location: "anywhere" },
 		],
 
+		"@typescript-eslint/ban-types": [
+			"error",
+			{
+				extendDefaults: true,
+				types: { "{}": false },
+			},
+		],
+		"@typescript-eslint/explicit-module-boundary-types": "off",
 		"@typescript-eslint/no-explicit-any": "off",
 		"@typescript-eslint/no-non-null-assertion": "off",
-		"@typescript-eslint/explicit-module-boundary-types": "off",
 		"@typescript-eslint/no-floating-promises": "error",
 
+		"import/default": "off",
 		"import/no-unresolved": "off",
+		"import/no-named-as-default": "off",
+		"import/no-named-as-default-member": "off",
 		"import/no-nodejs-modules": [
 			"error",
 			{ allow: builtinModules.map((mod) => `node:${mod}`) },
