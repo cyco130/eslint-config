@@ -56,13 +56,7 @@ module.exports = {
 			{ terms: ["fixme"], location: "anywhere" },
 		],
 
-		"@typescript-eslint/ban-types": [
-			"error",
-			{
-				extendDefaults: true,
-				types: { "{}": false },
-			},
-		],
+		"@typescript-eslint/no-empty-object-type": "off",
 		"@typescript-eslint/explicit-module-boundary-types": "off",
 		"@typescript-eslint/no-explicit-any": "off",
 		"@typescript-eslint/no-non-null-assertion": "off",
