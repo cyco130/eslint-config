@@ -40,8 +40,8 @@ module.exports = {
 			{ terms: ["fixme"], location: "anywhere" },
 		],
 
-		"@typescript-eslint/deprecation": "error",
 		"@typescript-eslint/explicit-module-boundary-types": "off",
+		"@typescript-eslint/no-deprecated": "error",
 		"@typescript-eslint/no-empty-object-type": "off",
 		"@typescript-eslint/no-explicit-any": "off",
 		"@typescript-eslint/no-floating-promises": "error",
