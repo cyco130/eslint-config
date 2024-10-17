@@ -13,7 +13,6 @@ module.exports = {
 		"plugin:react/recommended",
 		"plugin:ssr-friendly/recommended",
 		"plugin:css-modules/recommended",
-		"plugin:deprecation/recommended",
 		"prettier",
 	],
 	parser: "@typescript-eslint/parser",
@@ -56,11 +55,12 @@ module.exports = {
 			{ terms: ["fixme"], location: "anywhere" },
 		],
 
-		"@typescript-eslint/no-empty-object-type": "off",
+		"@typescript-eslint/deprecation": "error",
 		"@typescript-eslint/explicit-module-boundary-types": "off",
+		"@typescript-eslint/no-empty-object-type": "off",
 		"@typescript-eslint/no-explicit-any": "off",
-		"@typescript-eslint/no-non-null-assertion": "off",
 		"@typescript-eslint/no-floating-promises": "error",
+		"@typescript-eslint/no-non-null-assertion": "off",
 
 		"import/default": "off",
 		"import/no-unresolved": "off",
@@ -70,8 +70,6 @@ module.exports = {
 			"error",
 			{ allow: builtinModules.map((mod) => `node:${mod}`) },
 		],
-
-		"deprecation/deprecation": "error",
 
 		"react/prop-types": "off",
 		"react/react-in-jsx-scope": "off",
