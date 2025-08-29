@@ -4,7 +4,7 @@ This is a set of reusable ESLint configurations for [Fatih Aygün](https://githu
 
 ## Compatibility
 
-Version 5.x.x only supports ESLint 9 and flat configs. Use version 4.x.x for ESLint 8 and legacy configs.
+Version 5 and later only supports ESLint 9 and flat configs. Use version 4.x.x for ESLint 8 and legacy configs.
 
 ## Usage
 
