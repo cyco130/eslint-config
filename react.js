@@ -2,10 +2,10 @@
 import { builtinModules } from "node:module";
 import eslint from "@eslint/js";
 import { configs as tsEslintCfg, config } from "typescript-eslint";
-import { flatConfigs as importCfg } from "eslint-plugin-import";
+import { flatConfigs as importCfg } from "eslint-plugin-import-x";
 import prettierCfg from "eslint-config-prettier";
 import noOnlyTests from "eslint-plugin-no-only-tests";
-import onlyWarn from "eslint-plugin-only-warn";
+import "eslint-plugin-only-warn";
 import react from "eslint-plugin-react";
 import hooks from "eslint-plugin-react-hooks";
 import ssr from "eslint-plugin-ssr-friendly";
@@ -13,22 +13,22 @@ import * as cssModules from "eslint-plugin-css-modules";
 import globals from "globals";
 import { fixupPluginRules } from "@eslint/compat";
 
+/** @type { { rules: Record<string, 2>} } */
+// @ts-expect-error
+const cssModulesRecommendedConfig = cssModules.configs.recommended;
+
 export default config(
 	eslint.configs.recommended,
-	...tsEslintCfg.recommended,
+	tsEslintCfg.recommended,
 	importCfg.recommended,
-	// @ts-expect-error
 	importCfg.typescript,
-	// @ts-expect-error
 	react.configs.flat.recommended,
-	// @ts-expect-error
 	react.configs.flat["jsx-runtime"],
-	cssModules.configs.recommended,
+	cssModulesRecommendedConfig,
 	prettierCfg,
 	{
 		plugins: {
 			"no-only-tests": noOnlyTests,
-			"only-warn": onlyWarn,
 			"react-hooks": hooks,
 			// @ts-expect-error
 			"ssr-friendly": fixupPluginRules(ssr),
@@ -43,15 +43,15 @@ export default config(
 				ecmaFeatures: {
 					jsx: true,
 				},
-				ecmaVersion: 12,
+				ecmaVersion: "latest",
 				sourceType: "module",
 			},
 		},
 		settings: {
-			"import/parsers": {
+			"import-x/parsers": {
 				"@typescript-eslint/parser": [".ts", ".tsx"],
 			},
-			"import/resolver": {
+			"import-x/resolver": {
 				typescript: {
 					alwaysTryTypes: true,
 				},
@@ -79,11 +79,11 @@ export default config(
 			"@typescript-eslint/no-floating-promises": "error",
 			"@typescript-eslint/no-non-null-assertion": "off",
 
-			"import/default": "off",
-			"import/no-unresolved": "off",
-			"import/no-named-as-default": "off",
-			"import/no-named-as-default-member": "off",
-			"import/no-nodejs-modules": [
+			"import-x/default": "off",
+			"import-x/no-unresolved": "off",
+			"import-x/no-named-as-default": "off",
+			"import-x/no-named-as-default-member": "off",
+			"import-x/no-nodejs-modules": [
 				"error",
 				{ allow: builtinModules.map((mod) => `node:${mod}`) },
 			],

@@ -2,23 +2,22 @@
 import { builtinModules } from "node:module";
 import eslint from "@eslint/js";
 import { configs as tsEslintCfg, config } from "typescript-eslint";
-import { flatConfigs as importCfg } from "eslint-plugin-import";
+import { flatConfigs as importCfg } from "eslint-plugin-import-x";
 import prettierCfg from "eslint-config-prettier";
 import noOnlyTests from "eslint-plugin-no-only-tests";
-import onlyWarn from "eslint-plugin-only-warn";
 import globals from "globals";
+import "eslint-plugin-only-warn";
 
 export default config(
 	eslint.configs.recommended,
-	...tsEslintCfg.recommended,
+	tsEslintCfg.recommended,
 	importCfg.recommended,
-	// @ts-expect-error
 	importCfg.typescript,
 	prettierCfg,
 	{
+		files: ["**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}"],
 		plugins: {
 			"no-only-tests": noOnlyTests,
-			"only-warn": onlyWarn,
 		},
 		languageOptions: {
 			globals: {
@@ -29,15 +28,15 @@ export default config(
 				ecmaFeatures: {
 					jsx: true,
 				},
-				ecmaVersion: 12,
+				ecmaVersion: "latest",
 				sourceType: "module",
 			},
 		},
 		settings: {
-			"import/parsers": {
+			"import-x/parsers": {
 				"@typescript-eslint/parser": [".ts", ".tsx"],
 			},
-			"import/resolver": {
+			"import-x/resolver": {
 				typescript: {
 					alwaysTryTypes: true,
 				},
@@ -59,11 +58,11 @@ export default config(
 			"@typescript-eslint/no-floating-promises": "error",
 			"@typescript-eslint/no-non-null-assertion": "off",
 
-			"import/default": "off",
-			"import/no-unresolved": "off",
-			"import/no-named-as-default": "off",
-			"import/no-named-as-default-member": "off",
-			"import/no-nodejs-modules": [
+			"import-x/default": "off",
+			"import-x/no-unresolved": "off",
+			"import-x/no-named-as-default": "off",
+			"import-x/no-named-as-default-member": "off",
+			"import-x/no-nodejs-modules": [
 				"error",
 				{ allow: builtinModules.map((mod) => `node:${mod}`) },
 			],
