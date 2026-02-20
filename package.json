@@ -23,7 +23,7 @@
 		}
 	},
 	"peerDependencies": {
-		"eslint": "9 | 10",
+		"eslint": "9 || 10",
 		"typescript": "5"
 	},
 	"dependencies": {
