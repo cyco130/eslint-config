@@ -22,6 +22,9 @@
 			"import": "./react.js"
 		}
 	},
+	"engines": {
+		"node": "20 || 22 || 24 || 25"
+	},
 	"peerDependencies": {
 		"eslint": "9 || 10",
 		"typescript": "5"
