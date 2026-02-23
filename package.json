@@ -1,6 +1,6 @@
 {
 	"name": "@cyco130/eslint-config",
-	"version": "6.2.0",
+	"version": "6.2.1",
 	"type": "module",
 	"description": "ESLint configuration for Fatih Aygün's personal projects",
 	"author": "Fatih Aygün <cyco130@gmail.com>",
