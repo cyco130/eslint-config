@@ -15,22 +15,22 @@ import config from "@cyco130/eslint-config/node"; // or "@cyco130/eslint-config/
 
 /** @type {typeof config} */
 export default [
-	...config,
-	{
-		// Add your own ignores here
-		ignores: ["dist/", "node_modules/"],
-	},
-	{
-		languageOptions: {
-			parserOptions: {
-				projectService: true,
-				tsconfigRootDir: import.meta.dirname,
-			},
-		},
-	},
+  ...config,
+  {
+    // Add your own ignores here
+    ignores: ["dist/", "node_modules/"],
+  },
+  {
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
 ];
 ```
 
 ## Credits and license
 
--   By Fatih Aygün, [MIT license](./LICENSE)
+- By Fatih Aygün, [MIT license](./LICENSE)
