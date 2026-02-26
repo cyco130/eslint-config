@@ -1,0 +1,25 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"quoteProps": "as-needed",
+	"tabWidth": 4,
+	"useTabs": true,
+	"printWidth": 80,
+	"sortPackageJson": true,
+	"ignorePatterns": [],
+	"overrides": [
+		{
+			"files": ["**/*.md"],
+			"options": {
+				"tabWidth": 2,
+				"useTabs": false
+			}
+		},
+		{
+			"files": ["**/package.json"],
+			"options": {
+				"tabWidth": 2,
+				"useTabs": false
+			}
+		}
+	]
+}
