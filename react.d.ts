@@ -1,2 +1,3 @@
-declare const config: TSEslint.FlatConfig;
+import type { Config } from "eslint/config";
+declare const config: Config[];
 export default config;

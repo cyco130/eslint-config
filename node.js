@@ -1,16 +1,18 @@
 // @ts-check
+import { defineConfig } from "eslint/config";
 import { builtinModules } from "node:module";
 import eslint from "@eslint/js";
-import { configs as tsEslintCfg, config } from "typescript-eslint";
+import { configs as tsEslintCfg } from "typescript-eslint";
 import { flatConfigs as importCfg } from "eslint-plugin-import-x";
 import prettierCfg from "eslint-config-prettier";
 import noOnlyTests from "eslint-plugin-no-only-tests";
 import globals from "globals";
 import "eslint-plugin-only-warn";
 
-export default config(
+export default defineConfig(
 	eslint.configs.recommended,
 	tsEslintCfg.recommended,
+	// @ts-expect-error: The types are wrong for some reason
 	importCfg.recommended,
 	importCfg.typescript,
 	prettierCfg,
@@ -67,5 +69,5 @@ export default config(
 				{ allow: builtinModules.map((mod) => `node:${mod}`) },
 			],
 		},
-	}
+	},
 );
