@@ -21,7 +21,6 @@ const cssModulesRecommendedConfig = cssModules.configs.recommended;
 export default defineConfig(
 	eslint.configs.recommended,
 	tsEslintCfg.recommended,
-	// @ts-expect-error: The types are wrong for some reason
 	importCfg.recommended,
 	importCfg.typescript,
 	react.configs.flat.recommended,
@@ -31,9 +30,11 @@ export default defineConfig(
 	{
 		plugins: {
 			"no-only-tests": noOnlyTests,
+			// @ts-expect-error
 			"react-hooks": hooks,
 			// @ts-expect-error
 			"ssr-friendly": fixupPluginRules(ssr),
+			// @ts-expect-error
 			"css-modules": cssModules,
 		},
 		languageOptions: {

@@ -12,7 +12,6 @@ import "eslint-plugin-only-warn";
 export default defineConfig(
 	eslint.configs.recommended,
 	tsEslintCfg.recommended,
-	// @ts-expect-error: The types are wrong for some reason
 	importCfg.recommended,
 	importCfg.typescript,
 	prettierCfg,
