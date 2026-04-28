@@ -67,6 +67,7 @@ export default defineConfig(
 				"error",
 				{ allow: builtinModules.map((mod) => `node:${mod}`) },
 			],
+			"import-x/extensions": ["error", "ignorePackages"],
 		},
 	},
 );
