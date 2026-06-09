@@ -1,6 +1,6 @@
 {
   "name": "@cyco130/eslint-config",
-  "version": "9.0.1",
+  "version": "9.0.2",
   "description": "ESLint configuration for Fatih Aygün's personal projects",
   "license": "MIT",
   "author": "Fatih Aygün <cyco130@gmail.com>",
