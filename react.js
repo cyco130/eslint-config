@@ -13,6 +13,7 @@ import ssr from "eslint-plugin-ssr-friendly";
 import * as cssModules from "eslint-plugin-css-modules";
 import globals from "globals";
 import { fixupPluginRules } from "@eslint/compat";
+import cyco130 from "./plugin.js";
 
 /** @type { { rules: Record<string, 2>} } */
 // @ts-expect-error
@@ -36,6 +37,7 @@ export default defineConfig(
 			"ssr-friendly": fixupPluginRules(ssr),
 			// @ts-expect-error
 			"css-modules": cssModules,
+			cyco130,
 		},
 		languageOptions: {
 			globals: {
@@ -91,6 +93,8 @@ export default defineConfig(
 				{ allow: builtinModules.map((mod) => `node:${mod}`) },
 			],
 			"import-x/extensions": ["error", "ignorePackages"],
+			// import-x/extensions accepts "./foo.js" for "foo.ts" since 4.18.0
+			"cyco130/ts-extension": "error",
 
 			"react/prop-types": "off",
 		},
