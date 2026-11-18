@@ -8,6 +8,7 @@ import prettierCfg from "eslint-config-prettier";
 import noOnlyTests from "eslint-plugin-no-only-tests";
 import globals from "globals";
 import "eslint-plugin-only-warn";
+import cyco130 from "./plugin.js";
 
 export default defineConfig(
 	eslint.configs.recommended,
@@ -19,6 +20,7 @@ export default defineConfig(
 		files: ["**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}"],
 		plugins: {
 			"no-only-tests": noOnlyTests,
+			cyco130,
 		},
 		languageOptions: {
 			globals: {
@@ -68,6 +70,8 @@ export default defineConfig(
 				{ allow: builtinModules.map((mod) => `node:${mod}`) },
 			],
 			"import-x/extensions": ["error", "ignorePackages"],
+			// import-x/extensions accepts "./foo.js" for "foo.ts" since 4.18.0
+			"cyco130/ts-extension": "error",
 		},
 	},
 );

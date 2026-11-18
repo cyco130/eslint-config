@@ -1,0 +1,51 @@
+name: Code quality checks
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+
+defaults:
+  run:
+    working-directory: .
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        node_version: [26]
+        include:
+          - os: ubuntu-latest
+            node_version: 22
+          - os: ubuntu-latest
+            node_version: 24
+      fail-fast: false
+    name: "Code quality checks on node-${{ matrix.node_version }}, ${{ matrix.os }}"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Set node version to ${{ matrix.node_version }}
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node_version }}
+          check-latest: true
+          cache: "pnpm"
+
+      - name: Install
+        run: pnpm install
+
+      - name: Run tests
+        run: pnpm run test:unit
+
+      # Once is enough, and Windows checkouts have CRLF line endings
+      - name: Check formatting
+        if: matrix.os == 'ubuntu-latest' && matrix.node_version == 26
+        run: pnpm run test:format

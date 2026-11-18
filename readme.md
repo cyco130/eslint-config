@@ -31,6 +31,10 @@ export default [
 ];
 ```
 
+## Import extensions
+
+Relative imports must use the real extension of the file on disk. Importing `./foo.js` when the file is `foo.ts` is reported by the built-in `cyco130/ts-extension` rule, which can fix it automatically. Type-only imports are not checked.
+
 ## Credits and license
 
 - By Fatih Aygün, [MIT license](./LICENSE)

@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"module": "nodenext",
+		"target": "esnext",
+		"jsx": "preserve",
+		"allowJs": true,
+		"allowImportingTsExtensions": true,
+		"noEmit": true
+	},
+	"include": ["src"]
+}

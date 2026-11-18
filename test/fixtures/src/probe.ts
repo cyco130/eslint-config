@@ -1,0 +1,13 @@
+import "./debug";
+import "./debug.js";
+import "./debug.ts";
+import "./view.js";
+import "./view.jsx";
+import "./view.tsx";
+import "./real.js";
+import "../dist/cli.js";
+import type { debug } from "./debug.js";
+export * from "./debug.js";
+export { debug as renamed } from "./debug.js";
+export const lazy = () => import("./debug.js");
+export type Debug = typeof debug;
