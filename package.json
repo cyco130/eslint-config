@@ -24,7 +24,10 @@
     }
   },
   "scripts": {
-    "test": "node --test \"test/*.test.js\""
+    "format": "prettier --write .",
+    "test": "pnpm run /^test:/",
+    "test:unit": "node --test \"test/*.test.js\"",
+    "test:format": "prettier --check ."
   },
   "packageManager": "pnpm@12.21.0",
   "dependencies": {
